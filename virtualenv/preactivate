@@ -1,0 +1,7 @@
+#!/Users/jself/Library/Gentoo/bin/zsh
+source ~/.zshrc
+
+if [[ -z "$TMUX" ]]; then
+	tmux start-server
+	tmux attach -t work || tmux new-session -s test "tmuxifier load-session work"
+fi
